@@ -79,12 +79,18 @@ public:
 		uint nextobjective = 0u;
 
 	};
+	p2List<TileSet*> tileset;
+	p2List<Map*> map;
 
 private:
 
 	pugi::xml_document	map_file;
 	p2SString			folder;
 	bool				map_loaded;
+	p2List<SDL_Texture*> text_tileset;
+	bool FillMap(pugi::xml_node&);
+	
+
 };
 
 #endif // __j1MAP_H__

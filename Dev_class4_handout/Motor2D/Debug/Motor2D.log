@@ -1,13 +1,6 @@
-﻿  j1Main.cpp
-  j1App.cpp
-  j1Audio.cpp
-  j1Input.cpp
+﻿  j1App.cpp
   j1Map.cpp
   j1Scene.cpp
-  p2Log.cpp
-  j1Render.cpp
-  j1Textures.cpp
-  j1Window.cpp
-  pugixml.cpp
-  Generating Code...
-  Motor2D.vcxproj -> C:\Users\polcb1\Desktop\Dev_class4_handout\Debug\Motor 2D.exe
+  Generando código...
+j1Map.obj : error LNK2019: sÝmbolo externo "private: bool __thiscall j1Map::FillMap(class pugi::xml_node &)" (?FillMap@j1Map@@AAE_NAAVxml_node@pugi@@@Z) sin resolver al que se hace referencia en la funci¾n "public: bool __thiscall j1Map::Load(char const *)" (?Load@j1Map@@QAE_NPBD@Z)
+C:\Users\admin\Documents\GitHub\DEVELOPMENT\Dev_class4_handout\Debug\Motor 2D.exe : fatal error LNK1120: 1 externos sin resolver
