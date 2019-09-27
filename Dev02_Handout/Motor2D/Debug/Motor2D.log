@@ -1,0 +1,15 @@
+﻿  j1Main.cpp
+  j1App.cpp
+  j1Audio.cpp
+c:\users\polcb1\documents\github\developmentofvideogames\development\xml\dev02_handout\motor2d\j1audio.cpp(27): warning C4244: '=': conversion from 'float' to 'uint', possible loss of data
+c:\users\polcb1\documents\github\developmentofvideogames\development\xml\dev02_handout\motor2d\j1audio.cpp(183): warning C4244: '+=': conversion from 'double' to 'uint', possible loss of data
+c:\users\polcb1\documents\github\developmentofvideogames\development\xml\dev02_handout\motor2d\j1audio.cpp(188): warning C4244: '-=': conversion from 'double' to 'uint', possible loss of data
+  j1Input.cpp
+  j1Scene.cpp
+  p2Log.cpp
+  j1Render.cpp
+  j1Textures.cpp
+  j1Window.cpp
+  pugixml.cpp
+  Generating Code...
+  Motor2D.vcxproj -> C:\Users\polcb1\Documents\GitHub\DevelopmentOfVideoGames\Development\XML\Dev02_Handout\Debug\Motor 2D.exe
