@@ -40,17 +40,14 @@ bool ModulePhysics::Start()
 
 	b2Vec2 grav;
 	grav.x = 0.0f;
-	grav.y = -10.0f;
+	grav.y = 10.0f;
 
 	World = new b2World(grav);
 
 
 	// TODO 4: Create a a big static circle as "ground"
-	bodydef.position.Set(0.0f, -10.0f);
-	body = World->CreateBody(&bodydef);
-	b2PolygonShape groundcircle;
-	groundcircle.SetAsBox(50.0f, 20.0f);
-	body->CreateFixture(&groundcircle, 0.0f);
+	
+	MakeShape(200, 10, 10, false);
 	
 	
 	return true;
@@ -64,11 +61,40 @@ update_status ModulePhysics::PreUpdate()
 	return UPDATE_CONTINUE;
 }
 
+void ModulePhysics::MakeShape(float ratius, float x, float y, bool move=false) {
+
+	b2BodyDef circleground;
+	circleground.position.Set(x, y);
+
+	if (move == true)
+		circleground.type = b2_dynamicBody;
+
+	b2CircleShape shape;
+	shape.m_radius = PIXELS_TO_METERS(ratius);
+	shape.m_type = b2Shape::e_circle;
+	b2Body* body = World->CreateBody(&circleground);
+	if (move == true)
+	{
+		b2FixtureDef frixtureDef;
+		frixtureDef.shape = &shape;
+		frixtureDef.density = 1.0f;
+		frixtureDef.friction = 0.3f;
+		body->CreateFixture(&frixtureDef);
+	}
+	else
+		body->CreateFixture(&shape, 0.0f);
+
+	
+}
+
 // 
 update_status ModulePhysics::PostUpdate()
 {
 	// TODO 5: On space bar press, create a circle on mouse position
 	// - You need to transform the position / radius
+
+	if (App->input->GetKey(SDL_SCANCODE_SPACE) == 1)
+		MakeShape(50, PIXELS_TO_METERS(App->input->GetMouseX()), PIXELS_TO_METERS(App->input->GetMouseY()), true);
 
 	if (App->input->GetKey(SDL_SCANCODE_F1) == KEY_DOWN)
 		debug = !debug;
@@ -78,8 +104,8 @@ update_status ModulePhysics::PostUpdate()
 
 	// Bonus code: this will iterate all objects in the world and draw the circles
 	// You need to provide your own macro to translate meters to pixels
-	/*
-	for(b2Body* b = world->GetBodyList(); b; b = b->GetNext())
+	
+	for(b2Body* b = World->GetBodyList(); b; b = b->GetNext())
 	{
 		for(b2Fixture* f = b->GetFixtureList(); f; f = f->GetNext())
 		{
@@ -92,11 +118,18 @@ update_status ModulePhysics::PostUpdate()
 					App->renderer->DrawCircle(METERS_TO_PIXELS(pos.x), METERS_TO_PIXELS(pos.y), METERS_TO_PIXELS(shape->m_radius), 255, 255, 255);
 				}
 				break;
+				case b2Shape::e_polygon:
+				{
+					b2Block* shape2 = (b2Block*)f->GetShape();
+					b2Vec2 pos = f->GetBody()->GetPosition();
+					App->renderer->DrawCircle(METERS_TO_PIXELS(pos.x), METERS_TO_PIXELS(pos.y), METERS_TO_PIXELS(shape->m_radius), 255, 255, 255);
+				}
+				break;
 
 				// You will have to add more cases to draw boxes, edges, and polygons ...
 			}
 		}
-	}*/
+	}
 
 	return UPDATE_CONTINUE;
 }

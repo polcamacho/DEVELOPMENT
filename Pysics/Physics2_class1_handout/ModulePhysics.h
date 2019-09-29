@@ -14,11 +14,10 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 	b2World* World = nullptr;
-	b2BodyDef bodydef;
-	b2Body* body = nullptr;
 	float32 timeStep = 1.0f / 60.0f;
 	int32 velocityiterator = 8;
 	int32 positioniterator = 3;
+	void MakeShape(float, float, float, bool);
 
 
 private:
