@@ -83,8 +83,20 @@ void ModulePhysics::MakeShape(float ratius, float x, float y, bool move=false) {
 	}
 	else
 		body->CreateFixture(&shape, 0.0f);
-
-	
+	b2BodyDef groundbox;
+	groundbox.position.Set(50, 50);
+	if (move == false)
+		groundbox.type = b2_staticBody;
+	b2PolygonShape shape2;
+	shape2.m_type = b2Shape::e_polygon;
+	b2Body* body2 = World->CreateBody(&groundbox);
+	if (move == false)
+	{
+		b2FixtureDef frixtureDef2;
+		frixtureDef2.shape = &shape2;
+		frixtureDef2.density = 0.0f;
+		body2->CreateFixture(&frixtureDef2);
+	}
 }
 
 // 
@@ -120,9 +132,10 @@ update_status ModulePhysics::PostUpdate()
 				break;
 				case b2Shape::e_polygon:
 				{
-					b2Block* shape2 = (b2Block*)f->GetShape();
-					b2Vec2 pos = f->GetBody()->GetPosition();
-					App->renderer->DrawCircle(METERS_TO_PIXELS(pos.x), METERS_TO_PIXELS(pos.y), METERS_TO_PIXELS(shape->m_radius), 255, 255, 255);
+					b2PolygonShape* shape2 = (b2PolygonShape*)f->GetShape();
+					b2Vec2 pos2 = f->GetBody()->GetPosition();
+					SDL_Rect rect;
+					App->renderer->DrawQuad(rect, 255, 255, 255);
 				}
 				break;
 

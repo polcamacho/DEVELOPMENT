@@ -1,4 +1,4 @@
 ﻿  ModulePhysics.cpp
-c:\users\pc1\documents\github\development\pysics\physics2_class1_handout\modulephysics.cpp(97): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\pc1\documents\github\development\pysics\physics2_class1_handout\modulephysics.cpp(118): warning C4244: 'argumento': conversión de 'float32' a 'int'; posible pérdida de datos
+c:\users\pc1\documents\github\development\pysics\physics2_class1_handout\modulephysics.cpp(109): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\pc1\documents\github\development\pysics\physics2_class1_handout\modulephysics.cpp(130): warning C4244: 'argumento': conversión de 'float32' a 'int'; posible pérdida de datos
   SDL Game.vcxproj -> C:\Users\PC1\Documents\GitHub\DEVELOPMENT\Pysics\Physics2_class1_handout\Debug\Physics 2 Class 1 Handout.exe
