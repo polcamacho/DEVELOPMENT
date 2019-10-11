@@ -1,0 +1,12 @@
+﻿  j1Map.cpp
+C:\Users\polcb1\Desktop\Dev_class7_handout\Motor2D\j1Map.cpp(87,19): warning C4244:  '=': conversion from 'float' to 'TYPE', possible loss of data
+C:\Users\polcb1\Desktop\Dev_class7_handout\Motor2D\j1Map.cpp(87,19): warning C4244:         with
+C:\Users\polcb1\Desktop\Dev_class7_handout\Motor2D\j1Map.cpp(87,19): warning C4244:         [
+C:\Users\polcb1\Desktop\Dev_class7_handout\Motor2D\j1Map.cpp(87,19): warning C4244:             TYPE=int
+C:\Users\polcb1\Desktop\Dev_class7_handout\Motor2D\j1Map.cpp(87,19): warning C4244:         ]
+C:\Users\polcb1\Desktop\Dev_class7_handout\Motor2D\j1Map.cpp(88,19): warning C4244:  '=': conversion from 'float' to 'TYPE', possible loss of data
+C:\Users\polcb1\Desktop\Dev_class7_handout\Motor2D\j1Map.cpp(88,19): warning C4244:         with
+C:\Users\polcb1\Desktop\Dev_class7_handout\Motor2D\j1Map.cpp(88,19): warning C4244:         [
+C:\Users\polcb1\Desktop\Dev_class7_handout\Motor2D\j1Map.cpp(88,19): warning C4244:             TYPE=int
+C:\Users\polcb1\Desktop\Dev_class7_handout\Motor2D\j1Map.cpp(88,19): warning C4244:         ]
+  Motor2D.vcxproj -> C:\Users\polcb1\Desktop\Dev_class7_handout\Debug\Development - Class 7.exe
